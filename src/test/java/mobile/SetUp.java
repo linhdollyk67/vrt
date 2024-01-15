@@ -5,17 +5,19 @@ import io.visual_regression_tracker.sdk_java.IgnoreAreas;
 import io.visual_regression_tracker.sdk_java.TestRunOptions;
 import io.visual_regression_tracker.sdk_java.VisualRegressionTracker;
 import io.visual_regression_tracker.sdk_java.VisualRegressionTrackerConfig;
+import org.junit.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 
-public class Test {
+public class TestApp {
     static String platformName = "Android";
     static String deviceName = "vivo Y21s";
     static String platformVersion = "12";
@@ -53,7 +55,7 @@ public class Test {
         vrt.track(
                 "Login Page",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64), TestRunOptions.builder().device(deviceName).os("Android 12")
-                        .customTags("BODPay").viewport("3360 x 2012").diffTollerancePercent(0.0f)
+                        .customTags("BDOPay").viewport("3360 x 2012").diffTollerancePercent(0.0f)
                         .ignoreAreas(Collections.singletonList(IgnoreAreas.builder()
                                 .x(10L).y(10L).width(100L).height(200L).build())).build());
     }
